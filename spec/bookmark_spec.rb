@@ -3,12 +3,12 @@ require 'bookmark.rb'
 describe Bookmark do
   describe ".all" do
     it 'returns an array of bookmarks' do
-      bookmark_array = [
-        "http://www.makersacademy.com",
-        "http://www.destroyallsoftware.com",
-        "http://www.google.com"
-      ]
-      expect(described_class.all).to eq bookmark_array
+      bookmarks = described_class.all
+
+      expect(bookmarks).to include "http://www.makersacademy.com"
+      expect(bookmarks).to include "http://www.destroyallsoftware.com"
+      expect(bookmarks).to include "http://www.google.com"
+
     end
   end
 end
