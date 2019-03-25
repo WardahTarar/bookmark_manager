@@ -5,4 +5,4 @@ First user story:
 > So that I can see my bookmarks  
 > I want it to show me my bookmarks in a list
 
-<img src='./images/display-bookmarks-domain-model.jpg'>
+<img src='./images/display-bookmarks-domain-model.jpg' width=450>
