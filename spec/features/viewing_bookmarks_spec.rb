@@ -5,7 +5,6 @@ feature 'Viewing bookmarks' do
   end
 
   scenario 'viewing bookmarks' do
-
     Bookmark.new.create(url: "http://www.makersacademy.com")
     Bookmark.new.create(url: "http://www.destroyallsoftware.com")
     Bookmark.new.create(url: "http://www.google.com")

@@ -12,7 +12,7 @@ class Bookmark
     end
   end
 
-  def display_all
+  def all
     result = @connection.exec("SELECT * FROM bookmarks ORDER BY id;")
     result.map { |bookmark| bookmark['url'] }
   end 
