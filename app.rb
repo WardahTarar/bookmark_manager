@@ -11,9 +11,12 @@ class BookmarkManager < Sinatra::Base
     erb :add_bookmark
   end
 
-  post '/add_bookmark' do
-    @new_bookmark = params[:bookmark]
-    redirect "/bookmarks"
+  post '/bookmarks' do
+    # Bookmark.create(url: params[:url])
+    url = params[:url]
+    connection = Bookmark.new.connection
+    connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}')")
+    redirect '/bookmarks'
   end
 
   get '/bookmarks' do
