@@ -12,10 +12,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/bookmarks' do
-    # Bookmark.create(url: params[:url])
-    url = params[:url]
-    connection = Bookmark.new.connection
-    connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}')")
+    Bookmark.new.create(url: params[:url])
     redirect '/bookmarks'
   end
 

@@ -16,5 +16,9 @@ class Bookmark
     result = @connection.exec("SELECT * FROM bookmarks ORDER BY id;")
     result.map { |bookmark| bookmark['url'] }
   end 
+  
+  def create(url:)
+    @connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}')")
+  end
 
 end

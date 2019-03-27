@@ -20,4 +20,10 @@ describe Bookmark do
     end
   end
 
+  describe ".create" do
+    it 'creates a new bookmark in bookmark database' do
+      subject.create(url: 'http://www.testbookmark.com')
+      expect(subject.display_all).to include 'http://www.testbookmark.com'
+    end
+  end
 end
