@@ -3,11 +3,8 @@ require 'pg'
 def test_setup
   p 'Setting up test database...'
   connection = PG.connect(dbname: 'bookmark_manager_test')
-  connection.exec("TRUNCATE bookmarks;")
-end
+  connection.exec("DROP TABLE bookmarks;") #deletes before after every test
 
-# def persisted_data(id:)
-#   connection = PG.connect(dbname: 'bookmark_manager_test')
-#   result = connection.query("SELECT * FROM bookmarks WHERE id = #{id};")
-#   result.first
-# end
+  connection.exec("CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60), title VARCHAR(60));") #create new table before every test
+
+end

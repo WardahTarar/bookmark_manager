@@ -40,4 +40,14 @@ describe Bookmark do
       expect(Bookmark.all.length).to eq 0
     end
   end
+
+  describe '.update' do
+    it 'updates an existing code' do 
+      bm = Bookmark.create(title: 'Makers Academy', url: 'http://www.makersacademy.com')
+      Bookmark.update(url: 'www.snakersacademy.com', title: 'Snakers Academy', id: '1')
+      bm_updated = Bookmark.all.first
+      expect(bm_updated.title).to eq 'Snakers Academy'
+    end
+  end
+
 end
