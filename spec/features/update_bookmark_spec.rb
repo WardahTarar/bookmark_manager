@@ -1,4 +1,4 @@
-feature "Updating bookmark" do
+  feature "Updating bookmark" do
   scenario 'User can update an existing bookmark' do
     bookmark = Bookmark.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
     visit('/bookmarks')
